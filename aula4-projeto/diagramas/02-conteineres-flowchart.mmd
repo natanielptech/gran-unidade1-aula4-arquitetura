@@ -1,0 +1,14 @@
+flowchart LR
+    cliente(["👤 Cliente<br/>[Pessoa]"])
+    subgraph sis["Sistema de E-commerce"]
+        web["Aplicação Web<br/>[Contêiner: React]"]
+        api["API de Pedidos<br/>[Contêiner: Java / Spring Boot]"]
+        db[("Banco de Pedidos<br/>[Contêiner: PostgreSQL]")]
+    end
+    gateway["Gateway de Pagamento<br/>[Sistema Externo]"]
+    cliente -- "Usa (HTTPS)" --> web
+    web -- "Chama (HTTPS/JSON)" --> api
+    api -- "Lê e grava (JDBC)" --> db
+    api -- "Autoriza pagamento (HTTPS/JSON)" --> gateway
+    classDef ext fill:#999,stroke:#666,color:#fff
+    class gateway ext

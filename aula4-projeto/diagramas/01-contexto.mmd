@@ -1,0 +1,11 @@
+C4Context
+    title Diagrama de Contexto - Sistema de E-commerce
+    Person(cliente, "Cliente", "Navega, compra e acompanha pedidos")
+    System(ecom, "Sistema de E-commerce", "Catálogo, pedidos e pagamento")
+    System_Ext(gateway, "Gateway de Pagamento", "Autoriza pagamentos")
+    System_Ext(email, "Serviço de E-mail", "Envia notificações")
+    System_Ext(transp, "Transportadora", "Entrega os pedidos")
+    Rel(cliente, ecom, "Faz pedidos", "HTTPS")
+    Rel(ecom, gateway, "Autoriza pagamentos", "HTTPS/JSON")
+    Rel(ecom, email, "Envia e-mails", "SMTP")
+    Rel(ecom, transp, "Solicita entrega", "HTTPS/JSON")

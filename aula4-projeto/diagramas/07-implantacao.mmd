@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph Nuvem["Região de nuvem"]
+        subgraph K8s["Cluster Kubernetes"]
+            web["Pod: Aplicação Web"]
+            api["Pod: API de Pedidos"]
+        end
+        db[("PostgreSQL gerenciado")]
+    end
+    web --> api --> db
