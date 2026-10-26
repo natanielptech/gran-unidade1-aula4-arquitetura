@@ -1,0 +1,13 @@
+C4Container
+    title Diagrama de Contêineres - E-commerce
+    Person(cliente, "Cliente")
+    System_Boundary(sis, "Sistema de E-commerce") {
+        Container(web, "Aplicação Web", "React", "Interface do cliente")
+        Container(api, "API de Pedidos", "Java / Spring Boot", "Regras de pedido")
+        ContainerDb(db, "Banco de Pedidos", "PostgreSQL", "Armazena pedidos")
+    }
+    System_Ext(gateway, "Gateway de Pagamento", "Sistema externo")
+    Rel(cliente, web, "Usa", "HTTPS")
+    Rel(web, api, "Chama", "HTTPS/JSON")
+    Rel(api, db, "Lê e grava", "JDBC")
+    Rel(api, gateway, "Autoriza pagamento", "HTTPS/JSON")

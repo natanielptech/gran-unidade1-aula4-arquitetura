@@ -1,0 +1,10 @@
+flowchart LR
+    subgraph api["API de Pedidos [Contêiner: Java / Spring Boot]"]
+        ctrl["Controlador de Pedidos<br/>[Componente: Spring MVC]"]
+        frete["Serviço de Cálculo de Frete<br/>[Componente: Spring Bean]"]
+        repo["Repositório de Pedidos<br/>[Componente: Spring Data]"]
+    end
+    db[("Banco de Pedidos<br/>[Contêiner: PostgreSQL]")]
+    ctrl -- "Usa" --> frete
+    ctrl -- "Usa" --> repo
+    repo -- "Lê e grava (JDBC)" --> db

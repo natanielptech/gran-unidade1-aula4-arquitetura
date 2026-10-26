@@ -1,0 +1,10 @@
+sequenceDiagram
+    actor Cliente
+    participant Web as Aplicação Web
+    participant API as API de Pedidos
+    participant DB as Banco de Pedidos
+    Cliente->>Web: finaliza compra
+    Web->>API: POST /pedidos (HTTPS/JSON)
+    API->>DB: INSERT pedido
+    API-->>Web: 201 Created
+    Web-->>Cliente: confirmação

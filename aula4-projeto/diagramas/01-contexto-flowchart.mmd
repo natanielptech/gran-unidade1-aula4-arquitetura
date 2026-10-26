@@ -1,0 +1,12 @@
+flowchart LR
+    cliente(["👤 Cliente<br/>[Pessoa]"])
+    ecom["Sistema de E-commerce<br/>[Sistema de Software]"]
+    gateway["Gateway de Pagamento<br/>[Sistema Externo]"]
+    email["Serviço de E-mail<br/>[Sistema Externo]"]
+    transp["Transportadora<br/>[Sistema Externo]"]
+    cliente -- "Faz pedidos (HTTPS)" --> ecom
+    ecom -- "Autoriza pagamentos (HTTPS/JSON)" --> gateway
+    ecom -- "Envia e-mails (SMTP)" --> email
+    ecom -- "Solicita entrega (HTTPS/JSON)" --> transp
+    classDef ext fill:#999,stroke:#666,color:#fff
+    class gateway,email,transp ext
