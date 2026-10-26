@@ -1,10 +1,5 @@
 # Aula 4 — UML: C4 Model, Documentação e Comunicação da Arquitetura
 
-> **Curso:** Arquitetura de Sistemas e Microsserviços · **Unidade 1 · Aula 4** · Prof. Nataniel Paiva
-> **Fonte:** `Aula4_..._UML C4 Model, Documentação e Comunicação da Arquitetura_unidade01_aula04.pptx` (36 slides)
-
-Este README é um **briefing para outra IA** criar um projeto visual sobre o C4 Model e a comunicação da arquitetura. O conteúdo vem dos slides; os diagramas Mermaid são **exemplos prontos** para renderizar no GitHub.
-
 ---
 
 ## 1. Objetivo do projeto a ser gerado
